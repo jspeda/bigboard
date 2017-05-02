@@ -5,7 +5,13 @@
   height: 100vh;
 }
 
+.date {
+  padding-top: 15%;
+}
+
 .scoreboard {
   display: flex;
-  border: 1px solid green;
+  /*border: 1px solid green;*/
+  max-width: 100vw;
+  padding-top: 2%;
 }
