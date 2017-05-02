@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
 import './App.css';
 import Game from './Game';
+import moment from 'moment';
 
 class App extends Component {
   constructor() {
     super();
     this.addGame = this.addGame.bind(this);
     this.state = {
+      date: moment().format('MMMM Do, YYYY'),
       games: {}
     }
   }
 
   componentWillMount() {
+    // const today = moment().format('MMMM Do YYYY');
+    const thisYear = moment().format('YYYY');
+    const thisMonth = moment().format('MM');
+    const thisDay = moment().format('DD');
 
-    const scoreBoard = fetch('http://gd2.mlb.com/components/game/mlb/year_2017/month_04/day_26/miniscoreboard.json');
+    const scoreBoard = fetch(`http://gd2.mlb.com/components/game/mlb/year_${thisYear}/month_${thisMonth}/day_${thisDay}/miniscoreboard.json`);
     scoreBoard
       .then(data => data.json())
       .then(data => {
@@ -37,6 +43,8 @@ addGame(game) {
   render() {
     return (
       <div className="App">
+        <div className="date">{this.state.date}</div>
+        <div className="scoreboard">
         {
           Object.keys(this.state.games)
             .map(key =>
@@ -47,6 +55,7 @@ addGame(game) {
                />
             )
         }
+        </div>
       </div>
     );
   }
