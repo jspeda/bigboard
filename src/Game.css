@@ -1,11 +1,20 @@
 .game {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   border: 1px solid black;
-  padding: 20px;
+  padding: 2%;
   margin: 5px;
   box-shadow: 5px 5px grey;
+}
+
+.main-container {
+  display: flex;
+  /*border: 1px solid blue;*/
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+  width: 100%;
 }
 
 .game:hover {
@@ -30,7 +39,7 @@
 }
 
 .spacing-div {
-  height: 30%;
+  height: 1em;
 }
 
 .headers div {
@@ -57,6 +66,5 @@
 }
 
 .status {
-  display: flex;
-  flex-direction: row;
+  font-size: 15px;
 }

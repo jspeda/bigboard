@@ -5,12 +5,18 @@
   height: 100vh;
 }
 
-.date {
+.todays-scores {
   padding-top: 15%;
+  padding-bottom: 1%;
+}
+
+.date {
 }
 
 .scoreboard {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   /*border: 1px solid green;*/
   max-width: 100vw;
   padding-top: 2%;

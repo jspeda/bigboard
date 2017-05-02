@@ -13,7 +13,7 @@ class App extends Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     // const today = moment().format('MMMM Do YYYY');
     const thisYear = moment().format('YYYY');
     const thisMonth = moment().format('MM');
@@ -43,6 +43,7 @@ addGame(game) {
   render() {
     return (
       <div className="App">
+        <div className="todays-scores">Today's scores</div>
         <div className="date">{this.state.date}</div>
         <div className="scoreboard">
         {
