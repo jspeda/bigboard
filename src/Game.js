@@ -31,7 +31,9 @@ class Game extends Component {
             <div className="inning-number">
               {
                 // might need to change this to deal with final
-                gameData.top_inning === "Y" ? `${String.fromCharCode(8593)} ${gameData.inning}` : `${String.fromCharCode(8595)} ${gameData.inning}`
+                gameData.inning != undefined ?
+                  (gameData.top_inning === "Y" ? `${String.fromCharCode(8593)} ${gameData.inning}` : `${String.fromCharCode(8595)} ${gameData.inning}`) :
+                  null
               }
             </div>
           </div>
