@@ -51,18 +51,9 @@
   display: flex;
 }
 
-.away-team div:not(.away-name) {
-  border: 1px solid peru;
-  margin: 2%;
-}
 
 .home-team {
   display: flex;
-}
-
-.home-team div:not(.home-name) {
-  border: 1px solid peru;
-  margin: 2%;
 }
 
 .status {
