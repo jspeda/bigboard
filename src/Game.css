@@ -6,6 +6,7 @@
   padding: 2%;
   margin: 5px;
   box-shadow: 5px 5px grey;
+  width: 5em;
 }
 
 .main-container {
@@ -58,4 +59,5 @@
 
 .status {
   font-size: 15px;
+  align-self: center;
 }
