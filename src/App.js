@@ -14,7 +14,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // const today = moment().format('MMMM Do YYYY');
     const thisYear = moment().format('YYYY');
     const thisMonth = moment().format('MM');
     const thisDay = moment().format('DD');
@@ -28,7 +27,6 @@ class App extends Component {
           this.addGame(game);
           console.log(
           `${game.away_team_city}: ${game.away_team_runs} vs ${game.home_team_city}: ${game.home_team_runs} status: ${game.status}`
-          // I also would want to grab: the link to the game, outs, inning, bottom or top, runs hits errors
         )})
       });
 }
@@ -43,7 +41,7 @@ addGame(game) {
   render() {
     return (
       <div className="App">
-        <div className="todays-scores">Today's scores</div>
+        <div className="todays-scores">Today's Scores</div>
         <div className="date">{this.state.date}</div>
         <div className="scoreboard">
         {

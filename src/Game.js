@@ -2,6 +2,21 @@ import React, { Component } from 'react';
 import './Game.css'
 
 class Game extends Component {
+
+  inningStatus(gameData) {
+    if (gameData.inning!= undefined && gameData.inning != 'Final') {
+      return(
+        <span>
+          {
+            gameData.top_inning === "Y" ? `${String.fromCharCode(8593)} ${gameData.inning}` : `${String.fromCharCode(8595)} ${gameData.inning}`
+          }
+        </span>
+      )
+    }
+    else {
+      return(null);
+    }
+  }
   render() {
     const gameData = this.props.details;
     return (
@@ -30,10 +45,7 @@ class Game extends Component {
           <div className="inning">
             <div className="inning-number">
               {
-                // might need to change this to deal with final
-                gameData.inning != undefined && gameData.status != 'Final' ?
-                  (gameData.top_inning === "Y" ? `${String.fromCharCode(8593)} ${gameData.inning}` : `${String.fromCharCode(8595)} ${gameData.inning}`) :
-                  null
+                this.inningStatus(gameData)
               }
             </div>
           </div>
