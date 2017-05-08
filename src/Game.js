@@ -4,7 +4,7 @@ import './Game.css'
 class Game extends Component {
 
   inningStatus(gameData) {
-    if (gameData.inning!= undefined && gameData.inning != 'Final') {
+    if (gameData.inning !== undefined && gameData.inning !== 'Final') {
       return(
         <span>
           {
@@ -52,7 +52,7 @@ class Game extends Component {
         </div>
         <div className="status">
           {
-            gameData.status != "In Progress" && gameData.status != "Manager Challenge" ? `${gameData.status}` : ``
+            gameData.status !== "In Progress" && gameData.status !== "Manager Challenge" ? `${gameData.status}` : ``
           }
         </div>
       </div>
