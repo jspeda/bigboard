@@ -11,7 +11,6 @@
 
 .main-container {
   display: flex;
-  /*border: 1px solid blue;*/
   justify-content: center;
   align-items: center;
   padding: 10%;
@@ -30,7 +29,6 @@
   display: flex;
   flex-direction: column;
   margin: 5%;
-  /*border: 1px solid goldenrod;*/
   height: 100%;
 }
 
@@ -59,7 +57,6 @@
 
 .status {
   font-size: 15px;
-  align-self: center;
 }
 
 @media (max-width: 800px) {
