@@ -61,3 +61,9 @@
   font-size: 15px;
   align-self: center;
 }
+
+@media (max-width: 800px) {
+  .game {
+    padding: 5%;
+  }
+}
