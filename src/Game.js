@@ -52,7 +52,7 @@ class Game extends Component {
         </div>
         <div className="status">
           {
-            gameData.status !== "In Progress" && gameData.status !== "Manager Challenge" ? `${gameData.status}` : ``
+            gameData.status !== "In Progress" && gameData.status !== "Manager Challenge" ? `${gameData.status.toLowerCase()}` : ``
           }
         </div>
       </div>
