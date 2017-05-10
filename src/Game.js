@@ -4,7 +4,7 @@ import './Game.css'
 class Game extends Component {
 
   inningStatus(gameData) {
-    if (gameData.inning !== undefined && gameData.status !== 'Final') {
+    if (gameData.inning !== undefined && (gameData.status !== 'Final' && gameData.status !== "Game Over")) {
       return(
         <span>
           {
