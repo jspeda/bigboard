@@ -25,7 +25,7 @@
   display: flex;
 }
 
-.teams, .runs, .hits, .errors {
+.teams, .runs, .hits, .errors, .inning{
   display: flex;
   flex-direction: column;
   margin: 5%;
@@ -53,6 +53,11 @@
 
 .home-team {
   display: flex;
+}
+
+.inning {
+  margin-top: 15%;
+  font-weight: bold;
 }
 
 .status {

@@ -8,7 +8,7 @@ class Game extends Component {
       return(
         <span>
           {
-            gameData.top_inning === "Y" ? `${String.fromCharCode(8593)} ${gameData.inning}` : `${String.fromCharCode(8595)} ${gameData.inning}`
+            gameData.top_inning === "Y" ? `${String.fromCharCode(8593)}${gameData.inning}` : `${String.fromCharCode(8595)}${gameData.inning}`
           }
         </span>
       )
