@@ -13,9 +13,14 @@ class Game extends Component {
         </span>
       )
     }
-    else {
-      // if game status is final or 'game over' output final/inning number
-      return(null);
+    else if (gameData.status === "Final" || gameData.status === "Game Over"){
+      return(
+        <span>
+          {
+            `f/${gameData.inning}`
+          }
+        </span>
+      );
     }
   }
   render() {
@@ -30,18 +35,18 @@ class Game extends Component {
           </div>
           <div className="runs">
             <div className="runs-header">r</div>
-            <div className="away-runs">{gameData.away_team_runs}</div>
-            <div className="home-runs">{gameData.home_team_runs}</div>
+            <div className="away-runs">{gameData.away_team_runs || `0`}</div>
+            <div className="home-runs">{gameData.home_team_runs || `0`}</div>
           </div>
           <div className="hits">
             <div className="hits-header">h</div>
-            <div className="away-hits">{gameData.away_team_hits}</div>
-            <div className="home-hits">{gameData.home_team_hits}</div>
+            <div className="away-hits">{gameData.away_team_hits || `0`}</div>
+            <div className="home-hits">{gameData.home_team_hits || `0`}</div>
           </div>
           <div className="errors">
             <div className="errors-header">e</div>
-            <div className="away-errors">{gameData.away_team_errors}</div>
-            <div className="home-errors">{gameData.home_team_errors}</div>
+            <div className="away-errors">{gameData.away_team_errors || `0`}</div>
+            <div className="home-errors">{gameData.home_team_errors || `0`}</div>
           </div>
           <div className="inning">
             <div className="inning-number">
@@ -53,7 +58,7 @@ class Game extends Component {
         </div>
         <div className="status">
           {
-            gameData.status !== "In Progress" && gameData.status !== "Manager Challenge" ? `${gameData.status.toLowerCase()}` : ``
+            gameData.status !== "In Progress" && gameData.status !== "Manager Challenge" ? `${gameData.status.toLowerCase()}` : `outs: ${gameData.outs} `
           }
         </div>
       </div>
