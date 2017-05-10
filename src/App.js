@@ -13,7 +13,7 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     const thisYear = moment().format('YYYY');
     const thisMonth = moment().format('MM');
     const thisDay = moment().format('DD');
