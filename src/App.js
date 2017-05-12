@@ -13,18 +13,23 @@ class App extends Component {
     }
   }
 
-  componentWillMount() {
-    const thisYear = moment().format('YYYY');
-    const thisMonth = moment().format('MM');
-    const thisDay = moment().format('DD');
+componentWillMount() {
+  const thisYear = moment().format('YYYY');
+  const thisMonth = moment().format('MM');
+  const thisDay = moment().format('DD');
 
-    setInterval(() => {
-      const scoreBoard = fetch(`http://gd2.mlb.com/components/game/mlb/year_${thisYear}/month_${thisMonth}/day_${thisDay}/miniscoreboard.json`);
-      scoreBoard
-        .then(data => data.json())
-        .then(data => data.data.games.game.map(game => this.addGame(game))
-    )}, 1000);
+  const getGameData = () => {
+    const scoreBoard = fetch(`http://gd2.mlb.com/components/game/mlb/year_${thisYear}/month_${thisMonth}/day_${thisDay}/miniscoreboard.json`);
+    return scoreBoard
+      .then(data => data.json())
+      .then(data => data.data.games.game.map(game => this.addGame(game)))
+      .catch(err => console.log(err));
+  }
+  getGameData()
+    .then(() => setInterval(getGameData, 120000))
+    .catch(err => console.log(err));
 }
+
 
 addGame(game) {
   const games = {...this.state.games};
