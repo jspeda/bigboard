@@ -18,23 +18,17 @@ class App extends Component {
     const thisMonth = moment().format('MM');
     const thisDay = moment().format('DD');
 
-    const scoreBoard = fetch(`http://gd2.mlb.com/components/game/mlb/year_${thisYear}/month_${thisMonth}/day_${thisDay}/miniscoreboard.json`);
-    scoreBoard
-      .then(data => data.json())
-      .then(data => {
-        console.log(data.data.games.game)
-        data.data.games.game.map(game => {
-          this.addGame(game);
-          console.log(
-          `${game.away_team_city}: ${game.away_team_runs} vs ${game.home_team_city}: ${game.home_team_runs} status: ${game.status}`
-        )})
-      });
+    setInterval(() => {
+      const scoreBoard = fetch(`http://gd2.mlb.com/components/game/mlb/year_${thisYear}/month_${thisMonth}/day_${thisDay}/miniscoreboard.json`);
+      scoreBoard
+        .then(data => data.json())
+        .then(data => data.data.games.game.map(game => this.addGame(game))
+    )}, 1000);
 }
 
 addGame(game) {
   const games = {...this.state.games};
-  const timeStamp = Date.now();
-  games[`game-${timeStamp}`] = game;
+  games[game.home_team_city] = game;
   this.setState({games});
 }
 
